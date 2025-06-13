@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const { PORT } = require('./config/server-config');
 
 const app = express();
 
@@ -11,6 +12,6 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('Server is Runing on port 3000')
 })
