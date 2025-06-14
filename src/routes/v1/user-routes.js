@@ -1,21 +1,22 @@
 const express = require('express');
+const {userController} = require('../../controller/index')
 
 const router = express.Router();
 
 
-router.post('/',()=>{});
+router.post('/',userController.createUser);
 
-router.get('/:id',()=>{});
+router.get('/:id',userController.getUser);
 
-router.put('/:id',()=>{});
+router.put('/:id',userController.updateUser);
 
-router.post('/:id/follow/:targetUserId',()=>{});
+router.post('/:id/follow/:targetUserId',userController.followUser);
 
-router.delete('/:id/follow/:targetUserId',()=>{});
+router.delete('/:id/follow/:targetUserId',userController.unfollowUser);
 
-router.get('/:id/followers',()=>{})
+router.get('/:id/followers',userController.getFollowers)
 
-router.get('/:id/following',()=>{})
+router.get('/:id/following',userController.getFollowing)
 
 
 module.exports = router;
