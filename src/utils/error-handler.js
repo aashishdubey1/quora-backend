@@ -22,7 +22,7 @@ function errorhandler(err,req,res,next){
     }else{
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             success:false,
-            name:InternalServerError,
+            name:"InternalServerError",
             message:"Something went wrong on our side",
             error:err,
             data:{}

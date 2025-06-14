@@ -1,20 +1,21 @@
 const express = require('express');
+const {questionController} = require('../../controller')
 
 const router = express.Router();
 
-router.post('/',()=>{/* create a question*/})
+router.post('/',questionController.createQuestion)
 
-router.get('/:id',()=>{/* get a specific question */})
+router.get('/:id',questionController.getQuestion)
 
-router.put('/:id',()=>{/* update a specific question */})
+router.put('/:id',questionController.updateQuestion)
 
-router.delete('/:id',()=>{/* delete a specific question */})
+router.delete('/:id',questionController.deleteQuestion)
 
-router.get('/search',()=>{/* Search question based on tag and test */})
+router.get('/search',questionController.searchQuestion)
 
-router.post('/:id/answers',()=>{/* Post and answer to the question */})
+router.post('/:id/answers',questionController.addAnswer)
 
-router.get('/:id/answers',()=>{/* Post and answer to the question */})
+router.get('/:id/answers',questionController.getAnswer)
 
 
 module.exports = router;
