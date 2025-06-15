@@ -1,15 +1,18 @@
 const express = require('express');
+const {answerController} = require('../../controller')
 
 const router = express.Router();
 
-router.get('/:id',()=>{/* Get a specific answer*/})
 
-router.put('/:id',()=>{/* update a specific answer*/})
 
-router.delete('/:id',()=>{/* delete a specific answer */})
+router.get('/:id',answerController.getAnser)
 
-router.post('/:id/comments',()=>{/*add a comments to specific answer */})
+router.put('/:id',answerController.updateAnswer)
 
-router.get('/:id/commnets',()=>{/*get comments for a answer */})
+router.delete('/:id',answerController.deleteAnswer)
+
+router.post('/:id/comments',answerController.addCommentToAnswer)
+
+router.get('/:id/comments',answerController.getCommnets)
 
 module.exports = router;
