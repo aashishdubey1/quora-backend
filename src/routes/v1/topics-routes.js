@@ -1,12 +1,13 @@
 const express = require('express');
+const {topicController} = require('../../controller')
 
 const router = express.Router();
 
-router.post('/',()=>{/* create a new topic */})
+router.post('/',topicController.addTopic)
 
-router.get('/',()=>{/*get all topics */})
+router.get('/',topicController.getTopic)
 
-router.delete('/:id',()=>{/* delete a topic */})
+router.delete('/:id',topicController.deleteTopic)
 
 module.exports = router
 

@@ -1,17 +1,18 @@
 const express = require('express');
+const {commentController} = require('../../controller')
 
 const router = express.Router();
 
 
-router.get('/:id',()=>{/* get a specific comment */})
+router.get('/:id',commentController.getComment)
 
-router.put('/:id',()=>{/* update a specific comment */})
+router.put('/:id',commentController.updateComment)
 
-router.delete('/:id',()=>{/*delete a specific comment */})
+router.delete('/:id',commentController.deleteComment)
 
 
-router.post('/:id/comments',()=>{/* add comment to specific comment */})
+router.post('/:id/comments',commentController.addCommentToComment)
 
-router.get('/:id/comments',()=>{/* get comments to specific comment */})
+router.get('/:id/comments',commentController.getCommentsOnComment)
 
 module.exports = router;
