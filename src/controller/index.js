@@ -4,5 +4,6 @@ module.exports = {
     questionController:require('./question-controller'),
     answerController:require('./answer-controller'),
     commentController:require('./comment-controller'),
+    topicController:require('./topic-controller')
 
 }
